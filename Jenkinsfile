@@ -1,10 +1,10 @@
 node{
    stage('SCM Checkout'){
-     git 'https://github.com/vedantek/java-maven-war'
+     git 'https://github.com/jayesh2527/java-maven-war'
    }
    stage('Compile-Package'){
       // Get maven home path
-      def mvnHome =  tool name: 'maven3', type: 'maven'   
+      def mvnHome =  tool name: 'maven', type: 'maven'   
       sh "${mvnHome}/bin/mvn package"
    }
    stage('Slack Notification'){
